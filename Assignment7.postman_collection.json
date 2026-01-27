@@ -1,0 +1,345 @@
+{
+  "info": {
+    "_postman_id": "ee2be774-ca08-4227-b293-3a2da1121c07",
+    "name": "Assignment7",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40111162"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Sign-Up",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"mohamed shawky\",\r\n    \"email\": \"mohamed2@gmail.com\",\r\n    \"password\":\"test1234\",\r\n    \"role\":\"commentor\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/users/signup",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update-User-By-ID",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"mohamed shawky\",\r\n    \"email\": \"mohamed2@gmail.com\",\r\n    \"password\":\"test1234\",\r\n    \"role\":\"liker\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/users/update-user/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "update-user",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-User-By-Email",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/users/get-user-by-email?email=shawky@gmail.com",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "users",
+                "get-user-by-email"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "shawky@gmail.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "item": [
+        {
+          "name": "Create-Post",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"2chainz\",\r\n    \"content\":\"bigbootyhoes\",\r\n    \"authorId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/post/create-post",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "create-post"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete-Post-By-ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"mohamed shawky\",\r\n    \"email\": \"mohamed2@gmail.com\",\r\n    \"password\":\"test1234\",\r\n    \"role\":\"user\"\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/post/delete-post/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "delete-post",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-Post-Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/post/get-post-details",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "get-post-details"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get-Posts-Comment-Count",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/post/get-post-comment-count",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "post",
+                "get-post-comment-count"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comment",
+      "item": [
+        {
+          "name": "create-comment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"comments\": [\r\n    {\r\n      \"content\": \"This is my first comment\",\r\n      \"postId\": 3,\r\n      \"authorId\": 1\r\n    },\r\n    {\r\n      \"content\": \"Another comment here\",\r\n      \"postId\": 3,\r\n      \"authorId\": 2\r\n    }\r\n  ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/comment/create-comment",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "create-comment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-comment",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"authorId\": 1,\r\n  \"content\": \"Updated comment content\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/comment/update-comment/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "update-comment",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "find-or-create-comment",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/comment/find-or-create-comment",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "find-or-create-comment"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "search-comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/comment/search-comments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "search-comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-newest-comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/comment/get-newest-comments/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "get-newest-comments",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "comment-details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/comment/comment-details/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "comment",
+                "comment-details",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
