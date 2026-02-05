@@ -3,6 +3,7 @@ import {
   createUser,
   updateUser,
   getUserByEmail,
+  getUserById,
 } from "./user.service.js";
 const router = Router();
 router.post("/signup", async (req, res) => {
@@ -25,6 +26,16 @@ router.get("/get-user-by-email", async (req, res) => {
   try {
     const { email } = req.query;
     const user = await getUserByEmail(email);
+    if (!user) return res.json({ message: "User not found" });
+    res.json({ user });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+router.get("/get-user-by-id", async(req, res)=>{
+  try {
+    const {id} = req.query;
+    const user = await getUserById(id);
     if (!user) return res.json({ message: "User not found" });
     res.json({ user });
   } catch (error) {

@@ -1,4 +1,5 @@
 import { userModel } from "../../database/models/user.model.js";
+import { userModel } from './../../database/models/user.model';
 export const createUser = async (data) => {
   const { name, email, password, role } = data;
   const emailExist = await userModel.findOne({ where: { email } });
@@ -19,3 +20,6 @@ export const updateUser = async (id, data) => {
 export const getUserByEmail = async (email) => {
   return await userModel.findOne({ where: { email } });
 };
+export const getUserById = async (id) => {
+  return await userModel.findOne({where:{id}})
+}
